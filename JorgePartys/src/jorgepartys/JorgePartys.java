@@ -6,6 +6,7 @@
 package jorgepartys;
 
 import view.JeoGUI;
+import view.JeoQuestions;
 
 /**
  *
@@ -20,6 +21,7 @@ public class JorgePartys {
         // TODO code application logic here
         
         JeoGUI j = new JeoGUI();
+        JeoQuestions jeo = new JeoQuestions();
     }
     
 }

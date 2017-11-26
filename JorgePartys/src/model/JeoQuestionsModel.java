@@ -5,19 +5,10 @@
  */
 package model;
 
-
-
 /**
  *
  * @author Alumne
  */
-public class JeoModel {
-    private String[] ct = {"PHP", "C#", "JAVA", "SQL", "BATCH", "BASH"};
-    private String[] valors = {"100","200","300","400","500"};
-
-    public String[] getCt() {
-        return ct;
-    }
-   
+public class JeoQuestionsModel {
     
 }

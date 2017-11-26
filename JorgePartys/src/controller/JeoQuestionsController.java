@@ -5,20 +5,21 @@
  */
 package controller;
 
-import model.JeoModel;
-import view.JeoGUI;
+import model.JeoQuestionsModel;
+import view.JeoQuestions;
 
 /**
  *
  * @author Alumne
  */
-public class JeoController {
-     private JeoGUI view ;
-    private JeoModel model;
+public class JeoQuestionsController {
+    
+    private JeoQuestions view ;
+    private JeoQuestionsModel model;
 
-    public JeoController(JeoGUI view, JeoModel controller) {
+    public JeoQuestionsController(JeoQuestions view, JeoQuestionsModel model) {
         this.view = view;
-        this.model = controller;
+        this.model = model;
     }
     
     
