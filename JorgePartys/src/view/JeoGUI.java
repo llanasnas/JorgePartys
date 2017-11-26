@@ -5,6 +5,7 @@
  */
 package view;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -28,7 +29,9 @@ import javax.swing.JPanel;
 public class JeoGUI extends JFrame {
 
     public JButton[] categories = new JButton[6];
-    public JButton[] buttons = new JButton[30];
+    public JButton[][] buttons = new JButton[5][6];
+    public JLabel player1Info = new JLabel();
+    public JLabel player2Info = new JLabel();
 
     public JeoGUI() {
 
@@ -40,7 +43,7 @@ public class JeoGUI extends JFrame {
         this.setVisible(true);
 
     }
-
+    
     public void addComponentsToPane(Container pane) {       
         
         JPanel p = new JPanel();
@@ -49,8 +52,7 @@ public class JeoGUI extends JFrame {
         //creem les imatges png dels jugadors
         JLabel player1 = new JLabel();
         JLabel player2 = new JLabel();
-        JLabel player1Info = new JLabel("puntos player 1");
-        JLabel player2Info = new JLabel("puntos player 2");
+       
         ImageIcon icon = new ImageIcon("pg.png");        
         player1.setIcon(icon);
         ImageIcon icon2 = new ImageIcon("pg.png");
@@ -72,9 +74,9 @@ public class JeoGUI extends JFrame {
         
         JPanel y = new JPanel();
         y.setLayout(new FlowLayout());
-        String[] ct = {"PHP", "C#", "JAVA", "SQL", "BATCH", "BASH"};
+        
         for (int i = 0; i < 6; i++) {
-            categories[i]=new JButton(ct[i]);
+            categories[i]=new JButton();
             categories[i].setBackground(new Color(168, 52, 161));
             categories[i].setOpaque(true);
             categories[i].setPreferredSize(new Dimension(90, 60));
@@ -91,23 +93,21 @@ public class JeoGUI extends JFrame {
         JPanel x = new JPanel();
 
         x.setLayout(new GridLayout(5, 6));
-        for (int i = 1; i <= 30; i++) {
-            if (i <= 6) {
-                buttons[i - 1] = new JButton("100 €");
-            } else if (i > 6 && i <= 12) {
-                buttons[i - 1] = new JButton("200 €");
-            } else if (i > 12 && i <= 18) {
-                buttons[i - 1] = new JButton("300 €");
-            } else if (i > 18 && i <= 24) {
-                buttons[i - 1] = new JButton("400 €");
-            } else {
-                buttons[i - 1] = new JButton("500 €");
-            }
-            buttons[i - 1].setPreferredSize(new Dimension(90, 60));
-            buttons[i - 1].setBackground(new Color(255, 110, 0));
-            buttons[i - 1].setOpaque(true);
-            x.add(buttons[i - 1]);
+        
+        for (int i = 0; i < 5; i++) {   
+            for (int j = 0; j < 6; j++) {               
+            
+            buttons[i][j] = new JButton();            
+            buttons[i][j].setPreferredSize(new Dimension(90, 60));
+            buttons[i][j].setBackground(new Color(255, 110, 0));
+            buttons[i][j].setOpaque(true);             
+            x.add(buttons[i][j]);
+            }      
         }
+       
+        
+        
+        
         x.setBackground(new Color(255, 110, 0));
         pane.add(x, BorderLayout.SOUTH);
 

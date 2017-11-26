@@ -5,6 +5,7 @@
  */
 package view;
 
+import model.Pregunta;
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JButton;
@@ -22,16 +23,15 @@ import java.awt.Color;
  */
 public class JeoQuestions extends JFrame {
 
-    private JButton opcio1, opcio2, opcio3;
-    private JLabel pregunta;
-    private JPanel p1, p2;
+    public JButton opcio1, opcio2, opcio3;
+    public JLabel pregunta;
+    public JPanel p1, p2;
 
     public JeoQuestions() {
 
-        this.setTitle("Jeopardy");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Jeopardy");        
         addComponentsToPane(this.getContentPane());
-        this.setResizable(false);
+        this.setResizable(true);
         this.pack();
         this.setVisible(true);
 
@@ -39,7 +39,7 @@ public class JeoQuestions extends JFrame {
 
     private void addComponentsToPane(Container pane) {
 
-        pane.setLayout(new BorderLayout(500, 100));
+        pane.setSize(new Dimension(500,500));
         
         p1=new JPanel();
         p2=new JPanel();        
@@ -47,7 +47,8 @@ public class JeoQuestions extends JFrame {
         pregunta.setSize(new Dimension(400, 50));
         pregunta.setOpaque(true);             
         p1.add(pregunta,BorderLayout.CENTER);   
-        p2.setLayout(new BorderLayout(400, 50));
+        p1.setSize(new Dimension(100,100));
+        p2.setLayout(new BorderLayout(400, 70));
         opcio1 = new JButton("Opcio 1");
         opcio1.setPreferredSize(new Dimension(250, 50));
         opcio1.setBorder(new RoundedBorder(50));        

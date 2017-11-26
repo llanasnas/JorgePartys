@@ -7,8 +7,19 @@ package model;
 
 /**
  *
- * @author Alumne
+ * @author Susana
  */
 public class JeoQuestionsModel {
+    
+    private Pregunta pregunta;
+
+    public JeoQuestionsModel(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+    
     
 }
