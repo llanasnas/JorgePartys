@@ -11,7 +11,7 @@ import view.JeoGUI;
  *
  * @author Alumne
  */
-public class JorgePartys {
+public class  JorgePartys {
 
     /**
      * @param args the command line arguments
@@ -19,7 +19,7 @@ public class JorgePartys {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        JeoGUI j = new JeoGUI();
+        JeoGUI view = new JeoGUI();
     }
     
 }
