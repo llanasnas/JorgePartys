@@ -48,6 +48,11 @@ public class Pregunta {
     //hashmap de respuestas possibles <respuesta_correcta(numero), String>
     //respuestacorrecta esta en el archivo dat que creamos nosotrosdi
 
+    @Override
+    public String toString() {
+        return "Pregunta{" + "categoria=" + categoria + ", pregunta_correcta=" + pregunta_correcta + ", nivel_dificultad=" + nivel_dificultad + ", puntuacio_pregunta=" + puntuacio_pregunta + ", pregunta_texto=" + pregunta_texto + ", respuestas_posibles=" + respuestas_posibles + '}';
+    }
+
 
 
 }

@@ -1,6 +1,7 @@
 package model;
 
 public class Jugador {
+
     private String nickname;
     private int puntuation;
     private int correct_answer;
@@ -32,19 +33,19 @@ public class Jugador {
         return failed_answer;
     }
 
-    public void restarPuntuacion(){
+    public void restarPuntuacion(int valor) {
+        this.puntuation = +valor;
+    }
+
+    public void sumarPuntuacion(int valor) {
+        this.puntuation = +valor;
+    }
+
+    public void preguntaAcertada() {
 
     }
 
-    public void sumarPuntuacion(){
-
-    }
-
-    public void preguntaAcertada(){
-
-    }
-
-    public void preguntaFallada(){
+    public void preguntaFallada() {
 
     }
 }

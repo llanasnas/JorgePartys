@@ -11,11 +11,18 @@ import view.JeoGUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import model.JeoQuestionsModel;
+import model.Jugador;
+import model.Pregunta;
+import view.JeoQuestions;
 
 /**
  * @author Alumne
  */
 public class JeoController implements ActionListener {
+
     private JeoGUI view;
     private JeoModel model;
 
@@ -58,10 +65,34 @@ public class JeoController implements ActionListener {
             view.categories[i].setText(valors_str[i]);
         }
     }
-        @Override
-        public void actionPerformed (ActionEvent actionEvent){
-            JButton buttonSelected = (JButton) actionEvent.getSource();
+    
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+        JButton buttonSelected = (JButton) actionEvent.getSource();
+        LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
+        Pregunta auxPregunta;        
+        model.turno++;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (buttonSelected == view.buttons[i][j]) {
+                    view.buttons[i][j].setEnabled(false);
+                    Iterator it = auxLinkedHashSet.iterator();
+                    while (it.hasNext()) {
+                        auxPregunta = (Pregunta) it.next();
+                        if (auxPregunta.getCategoria() == j+1 && auxPregunta.getNivel_dificultad()==i+1) {
+                            JeoQuestions view2 = new JeoQuestions();
+                            JeoQuestionsModel model = new JeoQuestionsModel(auxPregunta,this.model.getJugador());
+                            JeoQuestionsController controller = new  JeoQuestionsController(model,view2);                            
+                        }
+                    }
 
+                }
+            }
 
         }
+        
+        view.player1Info.setText(String.valueOf(model.jugador1.getPuntuation()));
+        view.player2Info.setText(String.valueOf(model.jugador2.getPuntuation()));
+       ;
     }
+}

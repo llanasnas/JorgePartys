@@ -5,14 +5,14 @@
  */
 package view;
 
-import model.Pregunta;
+
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import classes.RoundedBorder;
+import clases.RoundedBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.BorderFactory;

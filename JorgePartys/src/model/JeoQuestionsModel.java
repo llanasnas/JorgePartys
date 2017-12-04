@@ -12,14 +12,19 @@ package model;
 public class JeoQuestionsModel {
     
     private Pregunta pregunta;
+    public Jugador jugador;
 
-    public JeoQuestionsModel(Pregunta pregunta) {
+    public JeoQuestionsModel(Pregunta pregunta,Jugador jugador) {
         this.pregunta = pregunta;
+        this.jugador= jugador;
+        
     }
 
     public Pregunta getPregunta() {
         return pregunta;
     }
+
+   
     
     
 }

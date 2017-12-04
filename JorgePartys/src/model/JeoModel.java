@@ -25,11 +25,21 @@ public class JeoModel {
     public Jugador jugador1;
     public LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
     public Jugador jugador2;
+    public int turno=1;
 
     public JeoModel() {
         this.jugador1 = new Jugador("Jugador 1");
         this.jugador2 = new Jugador("Jugador 2");
         cargarDatos();
+    }
+    public Jugador getJugador(){
+    
+        if(turno%2==0){
+            return this.jugador2;
+        }else{
+            return this.jugador1;
+        }
+        
     }
 
     public String[] getStr_categorias() {
@@ -57,18 +67,14 @@ public class JeoModel {
                 array_dades = linea.split(";");
                 HashMap<Integer,String> hash_respostes = new HashMap<>();
 
-                for (int i = 4; i < array_dades.length; i++) {
-                    hash_respostes.put(i-3, array_dades[i]);
+                for (int i = 5; i < array_dades.length; i++) {
+                    hash_respostes.put(i-4, array_dades[i]);
                 }
 
                 Pregunta auxPregunta = new Pregunta(Integer.parseInt(array_dades[0]), Integer.parseInt(array_dades[1]), Integer.parseInt(array_dades[2]), Integer.parseInt(array_dades[3]), array_dades[4], hash_respostes);
 
                 all_questions.add(auxPregunta);
-            }
-            Iterator it = all_questions.iterator() ;
-            while(it.hasNext()){
-                    System.out.println(it.next());
-                }
+            }            
         } catch (IOException e) {
             System.out.println("No se ha podido leer");
         } finally {
