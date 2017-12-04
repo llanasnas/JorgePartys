@@ -34,11 +34,11 @@ public class Jugador {
     }
 
     public void restarPuntuacion(int valor) {
-        this.puntuation = -valor;
+        this.puntuation -=valor;
     }
 
     public void sumarPuntuacion(int valor) {
-        this.puntuation = +valor;
+        this.puntuation +=valor;
     }
 
     public void preguntaAcertada() {

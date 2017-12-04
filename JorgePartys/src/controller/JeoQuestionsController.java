@@ -64,7 +64,7 @@ public class JeoQuestionsController implements ActionListener {
         
             view.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Falso");
+            JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(aux.getPregunta_correcta()));
             model.jugador.preguntaFallada();
             model.jugador.restarPuntuacion(aux.getPuntuacio_pregunta());
             if(model.jugador.getNickname().equals("Jugador 1")){
