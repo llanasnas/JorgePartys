@@ -33,29 +33,21 @@ public class JeoController implements ActionListener {
     }
 
     public void setUpButtons() {
-        view.player1Info.setText(String.valueOf(model.jugador1.getPuntuation()));
-        view.player2Info.setText(String.valueOf(model.jugador2.getPuntuation()));
+        view.player1Info.setText(String.valueOf(model.jugador1.getNickname()+ ": " + model.jugador1.getPuntuation()));
+        view.player2Info.setText(String.valueOf(model.jugador2.getNickname()+ ": " + model.jugador2.getPuntuation()));
         String[] valors_str = model.getPreu_preguntes();
+        LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
+        Pregunta auxPregunta;    
         for (int i = 0; i < 5; i++) {
 //            this.view.buttons[i-1]=new JButton();
             for (int j = 0; j < 6; j++) {
-                switch (i) {
-                    case 0:
-                        view.buttons[i][j].setText(valors_str[0]);
-                        break;
-                    case 1:
-                        view.buttons[i][j].setText(valors_str[1]);
-                        break;
-                    case 2:
-                        view.buttons[i][j].setText(valors_str[2]);
-                        break;
-                    case 3:
-                        view.buttons[i][j].setText(valors_str[3]);
-                        break;
-                    case 4:
-                        view.buttons[i][j].setText(valors_str[4]);
-                        break;
-                }
+                Iterator it = auxLinkedHashSet.iterator();
+                    while (it.hasNext()) {
+                        auxPregunta = (Pregunta) it.next();
+                        if (auxPregunta.getCategoria() == j+1 && auxPregunta.getNivel_dificultad()==i+1) {
+                                   view.buttons[i][j].setText(String.valueOf(auxPregunta.getPuntuacio_pregunta()) + " €");
+                        }
+                    }
                 view.buttons[i][j].addActionListener(this);
             }
         }
@@ -64,14 +56,32 @@ public class JeoController implements ActionListener {
         for (int i = 0; i < 6; i++) {
             view.categories[i].setText(valors_str[i]);
         }
+        
     }
+    public void doubleRound(){
     
+        LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
+        Pregunta auxPregunta;
+         Iterator it = auxLinkedHashSet.iterator();
+                    while (it.hasNext()) {
+                        auxPregunta = (Pregunta) it.next();
+                        auxPregunta.setPuntuacio_pregunta(auxPregunta.getPuntuacio_pregunta()*2);
+                                model.all_questions.remove(it);
+                                model.all_questions.add(auxPregunta);
+                                
+                        }                   
+                    System.out.println("Hola");
+    }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         JButton buttonSelected = (JButton) actionEvent.getSource();
         LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
-        Pregunta auxPregunta;        
-        model.turno++;
+        Pregunta auxPregunta;   
+        if(model.turno==3){
+            doubleRound();
+            setUpButtons();
+        }
+        
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
                 if (buttonSelected == view.buttons[i][j]) {
@@ -81,7 +91,7 @@ public class JeoController implements ActionListener {
                         auxPregunta = (Pregunta) it.next();
                         if (auxPregunta.getCategoria() == j+1 && auxPregunta.getNivel_dificultad()==i+1) {
                             JeoQuestions view2 = new JeoQuestions();
-                            JeoQuestionsModel model = new JeoQuestionsModel(auxPregunta,this.model.getJugador());
+                            JeoQuestionsModel model = new JeoQuestionsModel(auxPregunta,this.model.getJugador(),view.player1Info,view.player2Info);
                             JeoQuestionsController controller = new  JeoQuestionsController(model,view2);                            
                         }
                     }
@@ -91,8 +101,7 @@ public class JeoController implements ActionListener {
 
         }
         
-        view.player1Info.setText(String.valueOf(model.jugador1.getPuntuation()));
-        view.player2Info.setText(String.valueOf(model.jugador2.getPuntuation()));
-       ;
+        model.turno++;      
+       
     }
 }

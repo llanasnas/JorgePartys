@@ -19,6 +19,10 @@ public class Pregunta {
         this.respuestas_posibles = respuestas_posibles;
     }
 
+    public void setPuntuacio_pregunta(int puntuacio_pregunta) {
+        this.puntuacio_pregunta = puntuacio_pregunta;
+    }
+
     public int getPuntuacio_pregunta() {
         return puntuacio_pregunta;
     }

@@ -1,30 +1,30 @@
 1;1;1;100;¿En qué conjunto de números no existen los negativos?;Números naturales;Números reales;Números enteros
 1;3;2;200;¿Qué es un agujero negro?;Una fuente astronómica de energía electromagnética;Un fenómeno físico causado por el reflejo de la luz sobre la materia;Una región espaciotemporal con un campo gravitario que absorbe las partículas
-1;2;3;300;¿Qué superficie refleja mayor cantidad de luz?;El océano;!La nieve;Los Bosques
-1;2;4;400;¿Quién descubrió el electrocardiograma?;Ivan Capuz;!Willem Einthoven;Adolf Hitler
-1;3;5;500;¿Quién descubrió las primeras vacunas efectivas contra la fiebre amarilla?;Selman Abraham Waksman;Barbara McClintock;!Max Theiler
-2;3;1;100;¿Cómo murió Mahatma Gandhi?;Finalizó sus días anciano, víctima de una enfermedad;!Fue asesinado por un integrista indio ;En el frente en la Guerra de India-Pakistán
-2;2;2;200;¿En qué año se descubrieron los primero restos de Hombres de Neandertal?;1976;!1848;1896
-2;1;3;300;¿Qué país fue el primero del mundo en permitir la adopción por parejas del mismo sexo?;!España;Alemania;Holanda
-2;3;4;400;¿Quién fue el padre de Alejandro Magno?;Carlomagno;Séneca;!Filipo II
-2;1;5;500;¿Quién fue el unico nombrado como Reichmarschall durante el III Reich?;!Hermann Wilhelm Göring;Heinrich Himmler;Erwin Rommel
-3;2;1;100;¿A qué misterioso personaje roba Bilbo el Anillo de Poder en 'El Hobbit'?;Aragorn;!Gollum;Gandalf
+1;2;3;300;¿Qué superficie refleja mayor cantidad de luz?;El océano;La nieve;Los Bosques
+1;2;4;400;¿Quién descubrió el electrocardiograma?;Ivan Capuz;Willem Einthoven;Adolf Hitler
+1;3;5;500;¿Quién descubrió las primeras vacunas efectivas contra la fiebre amarilla?;Selman Abraham Waksman;Barbara McClintock;Max Theiler
+2;3;1;100;¿Cómo murió Mahatma Gandhi?;Finalizó sus días anciano, víctima de una enfermedad;Fue asesinado por un integrista indio ;En el frente en la Guerra de India-Pakistán
+2;2;2;200;¿En qué año se descubrieron los primero restos de Hombres de Neandertal?;1976;1848;1896
+2;1;3;300;¿Qué país fue el primero del mundo en permitir la adopción por parejas del mismo sexo?;España;Alemania;Holanda
+2;3;4;400;¿Quién fue el padre de Alejandro Magno?;Carlomagno;Séneca;Filipo II
+2;1;5;500;¿Quién fue el unico nombrado como Reichmarschall durante el III Reich?;Hermann Wilhelm Göring;Heinrich Himmler;Erwin Rommel
+3;2;1;100;¿A qué misterioso personaje roba Bilbo el Anillo de Poder en 'El Hobbit'?;Aragorn;Gollum;Gandalf
 3;1;2;200;¿Quién escribió Piripi Calzaslargas?;!Astrid Lindgren;Hercules Poirot;Arturo Pérez Reverte
-3;3;3;300;¿Cuál es la obra cumbre de la Arquitectura Bizantina?;La Iglesia de Santos Sergio y Baco;La Iglesia de la Santa Paz;!La Iglesia de Santa Sofía
-3;1;4;400;¿Quién escribió Fausto?;!Goethe;Michael Ende;Ray BradBury
-3;2;5;500;¿Cuántos actos tiene la obra La Casa de Bernarda Alba?;Cinco;!Tres;Uno
-4;2;1;100;¿A qué juega Beckham?;Golf;!fútbol;Cricket
-4;1;2;200;¿Quién fue el ganador de la Vuelta a España 2012?;!Alberto Contador;Joaquin Purito;Bradley Wiggins
-4;2;3;300;¿A qué juega Fernando Alonso?;Baloncesto;!Fórmula 1;Fútbol
-4;2;4;400;¿Dónde está La Bombonera, estadio de fútbol?;China;!Argentina;España
-4;1;5;500;En un partido de ping-pong ¿Qué ocurre si en el saque, la pelota toca la red?;!Se repite;Se repite hasta dos veces;Se descuenta un punto
-5;2;1;100;¿Quien es Blanca Romero en la serie Física o Química?;Olimpia, la Directora;!Irene, la profesora de Filosofía;Celia, la Jefa de Estudios
-5;2;2;200;¿Qué pareja de actores españoles interpreta a Elena y Ricardo, los protagonistas de la película Los Girasoles Ciegos?;Elena Furiase y Benicio del Toro;!Maribel Verdú y Javier Cámara;Asunción Balaguer y Juan Diego Botto
-5;3;3;300;¿Qué escritor es autor de la novela 'El Padrino'?;Umberto Eco;Thomas Harris;!Mario Puzo
-5;2;4;400;¿Cuál es la profesión de Melvin Udall, el protagonista de 'Mejor ... imposible'?;Repartidor de periódicos;!Escritor novela romántica;Pescadero
+3;3;3;300;¿Cuál es la obra cumbre de la Arquitectura Bizantina?;La Iglesia de Santos Sergio y Baco;La Iglesia de la Santa Paz;La Iglesia de Santa Sofía
+3;1;4;400;¿Quién escribió Fausto?;Goethe;Michael Ende;Ray BradBury
+3;2;5;500;¿Cuántos actos tiene la obra La Casa de Bernarda Alba?;Cinco;Tres;Uno
+4;2;1;100;¿A qué juega Beckham?;Golf;fútbol;Cricket
+4;1;2;200;¿Quién fue el ganador de la Vuelta a España 2012?;Alberto Contador;Joaquin Purito;Bradley Wiggins
+4;2;3;300;¿A qué juega Fernando Alonso?;Baloncesto;Fórmula 1;Fútbol
+4;2;4;400;¿Dónde está La Bombonera, estadio de fútbol?;China;Argentina;España
+4;1;5;500;En un partido de ping-pong ¿Qué ocurre si en el saque, la pelota toca la red?;Se repite;Se repite hasta dos veces;Se descuenta un punto
+5;2;1;100;¿Quien es Blanca Romero en la serie Física o Química?;Olimpia, la Directora;Irene, la profesora de Filosofía;Celia, la Jefa de Estudios
+5;2;2;200;¿Qué pareja de actores españoles interpreta a Elena y Ricardo, los protagonistas de la película Los Girasoles Ciegos?;Elena Furiase y Benicio del Toro;Maribel Verdú y Javier Cámara;Asunción Balaguer y Juan Diego Botto
+5;3;3;300;¿Qué escritor es autor de la novela 'El Padrino'?;Umberto Eco;Thomas Harris;Mario Puzo
+5;2;4;400;¿Cuál es la profesión de Melvin Udall, el protagonista de 'Mejor ... imposible'?;Repartidor de periódicos;Escritor novela romántica;Pescadero
 5;2;5;500;¿Cuál fue la primera película argelina en ganar un Oscar?;Q;!Z;X
-6;2;1;100;¿En qué provincia están las fuentes de San Ildefonso?;Cuenca;!Segovia;Ciudad Real
-6;1;2;200;¿Dónde se encuentra el río Tigris?;!En Asia;En Europa;En Africa
-6;2;3;300;¿Cuál es la capital de Mozambique?;Canuto;!Maputo;Islandia
-6;2;4;400;¿Cual de los siguientes países no es un archipiélago?;Japón;!Angola;Cuba
-6;1;5;500;¿Si aún existiesen, en qué país se encontrarían actualmente los Jardines colgantes de Babilonia?;!Iraq;Grecia;Egipto
+6;2;1;100;¿En qué provincia están las fuentes de San Ildefonso?;Cuenca;Segovia;Ciudad Real
+6;1;2;200;¿Dónde se encuentra el río Tigris?;En Asia;En Europa;En Africa
+6;2;3;300;¿Cuál es la capital de Mozambique?;Canuto;Maputo;Islandia
+6;2;4;400;¿Cual de los siguientes países no es un archipiélago?;Japón;Angola;Cuba
+6;1;5;500;¿Si aún existiesen, en qué país se encontrarían actualmente los Jardines colgantes de Babilonia?;Iraq;Grecia;Egipto

@@ -34,7 +34,7 @@ public class Jugador {
     }
 
     public void restarPuntuacion(int valor) {
-        this.puntuation = +valor;
+        this.puntuation = -valor;
     }
 
     public void sumarPuntuacion(int valor) {
@@ -42,10 +42,11 @@ public class Jugador {
     }
 
     public void preguntaAcertada() {
-
+        this.correct_answer++;
     }
 
     public void preguntaFallada() {
 
+        this.failed_answer++;
     }
 }

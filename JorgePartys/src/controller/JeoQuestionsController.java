@@ -56,11 +56,22 @@ public class JeoQuestionsController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Correcto");    
             model.jugador.preguntaAcertada();
             model.jugador.sumarPuntuacion(aux.getPuntuacio_pregunta());
+            if(model.jugador.getNickname().equals("Jugador 1")){
+            model.player1.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
+            }else{
+            model.player2.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
+            }
+        
             view.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Falso");
             model.jugador.preguntaFallada();
             model.jugador.restarPuntuacion(aux.getPuntuacio_pregunta());
+            if(model.jugador.getNickname().equals("Jugador 1")){
+            model.player1.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
+            }else{
+            model.player2.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
+            }
             view.dispose();
         }
 
