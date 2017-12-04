@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 
 /**
@@ -41,14 +42,18 @@ public class JeoModel {
     public void cargarDatos(){
         Path path = Paths.get("datosprueba.txt");
         BufferedReader br = null;
+        LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
+        String[] array_dades ;
+        String linea=null;
         try {
             br = Files.newBufferedReader(path, java.nio.charset.StandardCharsets.UTF_8);
         } catch (IOException e) {
             System.out.println("No se ha podido leer el fichero");;
         }
         try {
-            while (br.readLine() != null) {
-                String[] array_dades = br.readLine().split(";");
+            
+            while ((linea = br.readLine()) != null) {
+                array_dades = linea.split(";");
                 HashMap<Integer,String> hash_respostes = new HashMap<>();
 
                 for (int i = 4; i < array_dades.length; i++) {
@@ -57,14 +62,19 @@ public class JeoModel {
 
                 Pregunta auxPregunta = new Pregunta(Integer.parseInt(array_dades[0]), Integer.parseInt(array_dades[1]), Integer.parseInt(array_dades[2]), Integer.parseInt(array_dades[3]), array_dades[4], hash_respostes);
 
-                LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
                 all_questions.add(auxPregunta);
             }
+            Iterator it = all_questions.iterator() ;
+            while(it.hasNext()){
+                    System.out.println(it.next());
+                }
         } catch (IOException e) {
             System.out.println("No se ha podido leer");
         } finally {
             try {
+                if(br!=null){
                 br.close();
+                }
             } catch (IOException e) {
                 System.out.println("No se ha podido cerrar el archivo");
             }
