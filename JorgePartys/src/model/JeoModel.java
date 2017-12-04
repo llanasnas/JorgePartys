@@ -23,6 +23,7 @@ public class JeoModel {
     private String[] str_categorias = {"CIENCIA", "HISTORIA", "ARTE", "DEPORTE", "CINE", "GEOGRAFIA"};
     private String[] preu_preguntes = {"100€", "200€", "300€", "400€", "500€"};
     public Jugador jugador1;
+    public LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
     public Jugador jugador2;
 
     public JeoModel() {
@@ -42,7 +43,7 @@ public class JeoModel {
     public void cargarDatos(){
         Path path = Paths.get("datosprueba.txt");
         BufferedReader br = null;
-        LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
+        
         String[] array_dades ;
         String linea=null;
         try {
