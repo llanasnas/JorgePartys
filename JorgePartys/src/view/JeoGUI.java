@@ -31,6 +31,7 @@ public class JeoGUI extends JFrame {
     public JButton[][] buttons = new JButton[5][6];
     public JLabel player1Info = new JLabel();
     public JLabel player2Info = new JLabel();
+    public JLabel playerTurno = new JLabel(" ",JLabel.CENTER);
     
     
 
@@ -53,7 +54,10 @@ public class JeoGUI extends JFrame {
         //creem les imatges png dels jugadors
         JLabel player1 = new JLabel();
         JLabel player2 = new JLabel();
-        
+        playerTurno.setText("turno: Player 1");
+        playerTurno.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        p.add(playerTurno,BoxLayout.X_AXIS);
+        p.setBackground(Color.red);
 
         ImageIcon icon = new ImageIcon("pg.png");
         player1.setIcon(icon);
