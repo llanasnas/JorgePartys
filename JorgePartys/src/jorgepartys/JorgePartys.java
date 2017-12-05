@@ -8,7 +8,7 @@ package jorgepartys;
 import controller.JeoController;
 import model.JeoModel;
 import view.JeoGUI;
-import view.PodiumView;
+
 
 /**
  *

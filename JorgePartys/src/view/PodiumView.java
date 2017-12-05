@@ -7,8 +7,6 @@ package view;
 
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -23,8 +21,8 @@ import javax.swing.JPanel;
 public class PodiumView extends JFrame {
 
     public JLabel ganador = new JLabel();
-    public JLabel playerInfo = new JLabel();
-    public JLabel playerPoints = new JLabel();
+    public JLabel playerInfo = new JLabel(" ",JLabel.CENTER);
+    public JLabel playerPoints = new JLabel(" ",JLabel.CENTER);
 
     public PodiumView() {
 
@@ -42,15 +40,24 @@ public class PodiumView extends JFrame {
         JPanel p = new JPanel();
 
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-
+        JLabel winnerIs = new JLabel(" GANADOR: ",JLabel.CENTER);
+        winnerIs.setForeground(Color.yellow);
+        winnerIs.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        winnerIs.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        p.add(winnerIs);
         ImageIcon icon = new ImageIcon("ganador.png");
         ganador.setIcon(icon);
+        ganador.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         p.add(ganador);
         p.setBackground(new Color(52, 168, 116));        
         playerInfo.setForeground(Color.yellow);
-        playerInfo.setFont(new Font("TimesRoman", Font.PLAIN, 20)); 
+        playerInfo.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+        playerInfo.setHorizontalAlignment(JLabel.CENTER);
+        playerInfo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        playerPoints.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         playerPoints.setForeground(Color.yellow);
         playerPoints.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+        playerInfo.setHorizontalAlignment(JLabel.CENTER);
         p.add(playerInfo);
         p.add(playerPoints);
 

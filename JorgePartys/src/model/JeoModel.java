@@ -26,6 +26,7 @@ public class JeoModel {
     public LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
     public Jugador jugador2;
     public int turno=1;
+    public boolean actionListenerActivated=false;
 
     public JeoModel() {
         this.jugador1 = new Jugador("Jugador 1");

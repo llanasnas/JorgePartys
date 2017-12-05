@@ -11,8 +11,6 @@ import model.Pregunta;
 import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import model.JeoQuestionsModel;
-import view.JeoGUI;
 import view.JeoQuestions;
 
 /**
@@ -21,22 +19,22 @@ import view.JeoQuestions;
  */
 public class JeoQuestionsController implements ActionListener {
 
-    private JeoQuestionsModel model;
+    private Pregunta model;
     private JeoQuestions view;
+    private JeoController controller;
 
-    public JeoQuestionsController(JeoQuestionsModel model, JeoQuestions view) {
-        this.model = model;
+    public JeoQuestionsController(Pregunta pregunta, JeoQuestions view,JeoController controller) {
+        this.model = pregunta;
         this.view = view;
-
+        this.controller= controller;
         setUpButtons();
     }
 
     public void setUpButtons() {
 
-        Pregunta aux = model.getPregunta();
-        HashMap auxMap = aux.getRespuestas_posibles();
-
-        view.pregunta.setText(aux.getPregunta_texto());
+        
+        HashMap auxMap = this.model.getRespuestas_posibles();
+        view.pregunta.setText(this.model.getPregunta_texto());
         view.opcio1.setText((String) auxMap.get(1));
         view.opcio2.setText((String) auxMap.get(2));
         view.opcio3.setText((String) auxMap.get(3));
@@ -48,30 +46,20 @@ public class JeoQuestionsController implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent actionEvent) {
-        JButton buttonSelected = (JButton) actionEvent.getSource();
-        Pregunta aux = model.getPregunta();
-        HashMap auxMap = aux.getRespuestas_posibles();
+        JButton buttonSelected = (JButton) actionEvent.getSource();        
+        HashMap auxMap = this.model.getRespuestas_posibles();
         
-        if (buttonSelected.getText().equals(auxMap.get(aux.getPregunta_correcta()))) {
-            JOptionPane.showMessageDialog(null, "Correcto");    
-            model.jugador.preguntaAcertada();
-            model.jugador.sumarPuntuacion(aux.getPuntuacio_pregunta());
-            if(model.jugador.getNickname().equals("Jugador 1")){
-            model.player1.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
-            }else{
-            model.player2.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
-            }
         
+        if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
             view.dispose();
+            JOptionPane.showMessageDialog(null, "Correcto"); 
+            controller.preguntaAcertada(model.getPuntuacio_pregunta());
+            controller.preguntaRespondida();
+            
         } else {
-            JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(aux.getPregunta_correcta()));
-            model.jugador.preguntaFallada();
-            model.jugador.restarPuntuacion(aux.getPuntuacio_pregunta());
-            if(model.jugador.getNickname().equals("Jugador 1")){
-            model.player1.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
-            }else{
-            model.player2.setText(model.jugador.getNickname() + ": " + model.jugador.getPuntuation());
-            }
+            JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
+            controller.preguntaFallida(model.getPuntuacio_pregunta());
+            controller.preguntaRespondida();
             view.dispose();
         }
 
