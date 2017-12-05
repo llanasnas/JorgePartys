@@ -8,6 +8,7 @@ package jorgepartys;
 import controller.JeoController;
 import model.JeoModel;
 import view.JeoGUI;
+import view.PodiumView;
 
 /**
  *
@@ -24,6 +25,7 @@ public class  JorgePartys {
         JeoGUI view = new JeoGUI();
         JeoModel model = new JeoModel();
         JeoController controller = new JeoController(view,model);
+         
         
     }
     

@@ -15,8 +15,10 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import model.JeoQuestionsModel;
 import model.Jugador;
+import model.PodiumModel;
 import model.Pregunta;
 import view.JeoQuestions;
+import view.PodiumView;
 
 /**
  * @author Alumne
@@ -70,17 +72,15 @@ public class JeoController implements ActionListener {
                                 model.all_questions.add(auxPregunta);
                                 
                         }                   
-                    System.out.println("Hola");
+                    
     }
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         JButton buttonSelected = (JButton) actionEvent.getSource();
         LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
         Pregunta auxPregunta;   
-        if(model.turno==3){
-            doubleRound();
-            setUpButtons();
-        }
+        
+        
         
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
@@ -101,7 +101,24 @@ public class JeoController implements ActionListener {
 
         }
         
-        model.turno++;      
+        model.turno++;   
+        if(model.turno==5){
+            doubleRound();
+            setUpButtons();
+        }
+        else if(model.turno==7){
+            Jugador auxJugador;
+                PodiumView view = new PodiumView();
+                if(model.jugador1.getPuntuation()>model.jugador2.getPuntuation()){
+                auxJugador = model.jugador1;
+                }else{
+                auxJugador = model.jugador2;
+                }                
+                PodiumModel modelo = new PodiumModel(auxJugador);
+                PodiumController controller = new PodiumController(view,modelo);
+            
+            
+        }
        
     }
 }
