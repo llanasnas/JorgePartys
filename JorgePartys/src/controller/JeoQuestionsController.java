@@ -38,11 +38,11 @@ public class JeoQuestionsController implements ActionListener {
         view.opcio1.setText((String) auxMap.get(1));
         view.opcio2.setText((String) auxMap.get(2));
         view.opcio3.setText((String) auxMap.get(3));
-
         view.opcio1.addActionListener(this);
         view.opcio2.addActionListener(this);
-        view.opcio3.addActionListener(this);
-
+        view.opcio3.addActionListener(this);        
+        controller.disableButton(model);        
+        
     }
 
     public void actionPerformed(ActionEvent actionEvent) {
@@ -55,15 +55,11 @@ public class JeoQuestionsController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Correcto"); 
             controller.preguntaAcertada(model.getPuntuacio_pregunta());
             controller.preguntaRespondida();
-            controller.enableButton(model);
-            
         } else {
             view.dispose();
             JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
-            controller.preguntaFallida(model.getPuntuacio_pregunta());
+            controller.preguntaFallida(model.getPuntuacio_pregunta()); 
             controller.preguntaRespondida();
-            controller.enableButton(model);
-            
         }
 
     }
