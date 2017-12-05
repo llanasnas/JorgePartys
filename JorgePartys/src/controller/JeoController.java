@@ -85,7 +85,7 @@ public class JeoController implements ActionListener {
         model.turno++;
         if (model.turno == 5) {
             doubleRound();
-            JOptionPane.showMessageDialog(null, "Haveis llegado a la JeoPardy Double Round");
+            JOptionPane.showMessageDialog(null, "Habeis llegado a la JeoPardy Double Round");
             setUpButtons();
         } else if (model.turno == 7) {
             Jugador auxJugador;
@@ -107,6 +107,29 @@ public class JeoController implements ActionListener {
 
     }
 
+    public void disableButton(Pregunta p) {
+        Pregunta auxPregunta;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (p.getCategoria() - 1 == j && p.getNivel_dificultad() - 1 == i) {
+                    view.buttons[i][j].setEnabled(false);
+                }
+            }
+        }
+
+    }
+    public void enableButton(Pregunta p) {
+        Pregunta auxPregunta;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+                if (p.getCategoria() - 1 == j && p.getNivel_dificultad() - 1 == i) {
+                    view.buttons[i][j].setEnabled(false);
+                }
+            }
+        }
+
+    }
+
     public void preguntaFallida(int valor) {
         model.getJugador().preguntaFallada();
         model.getJugador().restarPuntuacion(valor);
@@ -121,7 +144,6 @@ public class JeoController implements ActionListener {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
                 if (buttonSelected == view.buttons[i][j]) {
-                    view.buttons[i][j].setEnabled(false);
                     Iterator it = auxLinkedHashSet.iterator();
                     while (it.hasNext()) {
                         auxPregunta = (Pregunta) it.next();

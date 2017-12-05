@@ -5,7 +5,6 @@
  */
 package view;
 
-
 import java.awt.Container;
 import java.awt.Dimension;
 import javax.swing.JButton;
@@ -16,6 +15,7 @@ import clases.RoundedBorder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,6 +34,18 @@ public class JeoQuestions extends JFrame {
         this.setResizable(false);
         this.pack();
         this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                if (JOptionPane.showConfirmDialog(null,
+                        "Seguro que quieres cerrar", "Estás seguro?",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                        
+                }
+            }
+        });
 
     }
 

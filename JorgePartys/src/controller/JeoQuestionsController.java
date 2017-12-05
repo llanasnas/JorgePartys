@@ -55,12 +55,15 @@ public class JeoQuestionsController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Correcto"); 
             controller.preguntaAcertada(model.getPuntuacio_pregunta());
             controller.preguntaRespondida();
+            controller.enableButton(model);
             
         } else {
+            view.dispose();
             JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
             controller.preguntaFallida(model.getPuntuacio_pregunta());
             controller.preguntaRespondida();
-            view.dispose();
+            controller.enableButton(model);
+            
         }
 
     }
