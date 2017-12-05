@@ -98,7 +98,7 @@ public class JeoController implements ActionListener {
             PodiumModel modelo = new PodiumModel(auxJugador);
             PodiumController controller = new PodiumController(view, modelo);
         }
-        view.playerTurno.setText("turno de : " + model.getJugador().getNickname());
+        view.playerTurno.setText("TURNO DE : " + model.getJugador().getNickname().toUpperCase());
 
     }
 
