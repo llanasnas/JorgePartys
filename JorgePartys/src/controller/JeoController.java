@@ -116,6 +116,7 @@ public class JeoController implements ActionListener {
                 }
             }
         }
+        
 
     }
     public void enableButton(Pregunta p) {
