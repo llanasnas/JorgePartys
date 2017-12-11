@@ -45,8 +45,10 @@ public class JeoController implements ActionListener {
                 Iterator it = auxLinkedHashSet.iterator();
                 while (it.hasNext()) {
                     auxPregunta = (Pregunta) it.next();
-                    if (auxPregunta.getCategoria() == j + 1 && auxPregunta.getNivel_dificultad() == i + 1) {
-                        view.buttons[i][j].setText(String.valueOf(auxPregunta.getPuntuacio_pregunta()) + " €");
+                    if (view.buttons[i][j].isEnabled()) {
+                        if (auxPregunta.getCategoria() == j + 1 && auxPregunta.getNivel_dificultad() == i + 1) {
+                            view.buttons[i][j].setText(String.valueOf(auxPregunta.getPuntuacio_pregunta()) + " €");
+                        }
                     }
                 }
                 if (!model.actionListenerActivated) {
@@ -62,11 +64,13 @@ public class JeoController implements ActionListener {
         }
 
     }
-    public void disableButtons(){
-    view.setEnabled(false);
+
+    public void disableButtons() {
+        view.setEnabled(false);
     }
-    public void enableButtons(){
-    view.setEnabled(true);
+
+    public void enableButtons() {
+        view.setEnabled(true);
     }
 
     public void doubleRound() {
@@ -85,7 +89,7 @@ public class JeoController implements ActionListener {
     }
 
     public void preguntaRespondida() {
-        
+
         view.player1Info.setText(String.valueOf(model.jugador1.getNickname() + ": " + model.jugador1.getPuntuation()));
         view.player2Info.setText(String.valueOf(model.jugador2.getNickname() + ": " + model.jugador2.getPuntuation()));
         model.turno++;
@@ -126,7 +130,6 @@ public class JeoController implements ActionListener {
         }
 
     }
-  
 
     public void preguntaFallida(int valor) {
         model.getJugador().preguntaFallada();
@@ -146,11 +149,12 @@ public class JeoController implements ActionListener {
                     Iterator it = auxLinkedHashSet.iterator();
                     while (it.hasNext()) {
                         auxPregunta = (Pregunta) it.next();
+
                         if (auxPregunta.getCategoria() == j + 1 && auxPregunta.getNivel_dificultad() == i + 1) {
                             JeoQuestions view2 = new JeoQuestions();
-
                             JeoQuestionsController controller = new JeoQuestionsController(auxPregunta, view2, this);
                         }
+
                     }
 
                 }
