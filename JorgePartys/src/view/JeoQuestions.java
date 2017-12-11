@@ -39,10 +39,10 @@ public class JeoQuestions extends JFrame {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 if (JOptionPane.showConfirmDialog(null,
-                        "Seguro que quieres cerrar?", "Estás seguro?",
+                        "Si cierras, se cerrara el programa, ¿Estás seguro?", "Estás seguro?",
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-                        JeoQuestions.this.dispose();
+                        System.exit(0);
                         
                 }
             }
