@@ -21,13 +21,13 @@ import javax.swing.JPanel;
 public class PodiumView extends JFrame {
 
     public JLabel ganador = new JLabel();
-    public JLabel playerInfo = new JLabel(" ",JLabel.CENTER);
-    public JLabel playerPoints = new JLabel(" ",JLabel.CENTER);
+    public JLabel playerInfo = new JLabel(" ", JLabel.CENTER);
+    public JLabel playerPoints = new JLabel(" ", JLabel.CENTER);
 
     public PodiumView() {
 
         this.setTitle("Jeopardy");
-        
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addComponentsToPane(this.getContentPane());
         this.setResizable(false);
         this.pack();
@@ -40,7 +40,7 @@ public class PodiumView extends JFrame {
         JPanel p = new JPanel();
 
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-        JLabel winnerIs = new JLabel(" GANADOR: ",JLabel.CENTER);
+        JLabel winnerIs = new JLabel(" GANADOR: ", JLabel.CENTER);
         winnerIs.setForeground(Color.yellow);
         winnerIs.setFont(new Font("TimesRoman", Font.PLAIN, 25));
         winnerIs.setAlignmentX(JLabel.CENTER_ALIGNMENT);
@@ -49,7 +49,7 @@ public class PodiumView extends JFrame {
         ganador.setIcon(icon);
         ganador.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         p.add(ganador);
-        p.setBackground(new Color(52, 168, 116));        
+        p.setBackground(new Color(52, 168, 116));
         playerInfo.setForeground(Color.yellow);
         playerInfo.setFont(new Font("TimesRoman", Font.PLAIN, 20));
         playerInfo.setHorizontalAlignment(JLabel.CENTER);

@@ -48,7 +48,7 @@ public class JeoQuestionsController implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         JButton buttonSelected = (JButton) actionEvent.getSource();        
         HashMap auxMap = this.model.getRespuestas_posibles();
-        
+        controller.enableButtons();
         
         if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
             view.dispose();

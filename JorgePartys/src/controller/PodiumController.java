@@ -26,9 +26,9 @@ public class PodiumController {
     }
 
     private void setUpData() {
-        Jugador auxJugador = model.jugador;
+        Jugador auxJugador = model.jugador;  
         view.playerInfo.setText(auxJugador.getNickname());
-        view.playerPoints.setText(String.valueOf(auxJugador.getPuntuation()));
+        view.playerPoints.setText(String.valueOf(auxJugador.getPuntuation() + " €"));
         
     }
     

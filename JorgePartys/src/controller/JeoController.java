@@ -62,6 +62,12 @@ public class JeoController implements ActionListener {
         }
 
     }
+    public void disableButtons(){
+    view.setEnabled(false);
+    }
+    public void enableButtons(){
+    view.setEnabled(true);
+    }
 
     public void doubleRound() {
 
@@ -79,7 +85,7 @@ public class JeoController implements ActionListener {
     }
 
     public void preguntaRespondida() {
-
+        
         view.player1Info.setText(String.valueOf(model.jugador1.getNickname() + ": " + model.jugador1.getPuntuation()));
         view.player2Info.setText(String.valueOf(model.jugador2.getNickname() + ": " + model.jugador2.getPuntuation()));
         model.turno++;
@@ -97,6 +103,7 @@ public class JeoController implements ActionListener {
             }
             PodiumModel modelo = new PodiumModel(auxJugador);
             PodiumController controller = new PodiumController(view, modelo);
+            this.view.dispose();
         }
         view.playerTurno.setText("TURNO DE : " + model.getJugador().getNickname().toUpperCase());
 
@@ -119,17 +126,7 @@ public class JeoController implements ActionListener {
         }
 
     }
-    public void enableButton(Pregunta p) {
-        Pregunta auxPregunta;
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 6; j++) {
-                if (p.getCategoria() - 1 == j && p.getNivel_dificultad() - 1 == i) {
-                    view.buttons[i][j].setEnabled(false);
-                }
-            }
-        }
-
-    }
+  
 
     public void preguntaFallida(int valor) {
         model.getJugador().preguntaFallada();
@@ -139,6 +136,7 @@ public class JeoController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
+        disableButtons();
         JButton buttonSelected = (JButton) actionEvent.getSource();
         LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
         Pregunta auxPregunta;

@@ -51,14 +51,15 @@ public class JeoGUI extends JFrame {
         JPanel p = new JPanel();
 
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-        //creem les imatges png dels jugadors
+        
         JLabel player1 = new JLabel();
         JLabel player2 = new JLabel();
-        playerTurno.setText("turno: Player 1");
+        playerTurno.setText("TURNO DE: JUGADOR 1");
         playerTurno.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        playerTurno.setFont(new Font("TimesRoman", Font.PLAIN, 18));
         p.add(playerTurno,BoxLayout.X_AXIS);
         p.setBackground(Color.red);
-
+        //creem les imatges png dels jugadors
         ImageIcon icon = new ImageIcon("pg.png");
         player1.setIcon(icon);
         ImageIcon icon2 = new ImageIcon("pg.png");
