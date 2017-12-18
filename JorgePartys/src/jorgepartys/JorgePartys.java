@@ -7,6 +7,7 @@ package jorgepartys;
 
 import controller.JeoController;
 import model.JeoModel;
+import model.JeoModelExtra;
 import view.JeoGUI;
 
 

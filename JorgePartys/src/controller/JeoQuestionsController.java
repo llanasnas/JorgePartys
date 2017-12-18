@@ -50,16 +50,31 @@ public class JeoQuestionsController implements ActionListener {
         HashMap auxMap = this.model.getRespuestas_posibles();
         controller.enableButtons();
         
-        if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
+        if (controller.finalRound == false) {
+            if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
             view.dispose();
             JOptionPane.showMessageDialog(null, "Correcto"); 
             controller.preguntaAcertada(model.getPuntuacio_pregunta());
             controller.preguntaRespondida();
+            } else {
+                view.dispose();
+                JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
+                controller.preguntaFallida(model.getPuntuacio_pregunta()); 
+                controller.preguntaRespondida();
+            }
+        }else{
+            if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
+            view.dispose();
+            JOptionPane.showMessageDialog(null, "Correcto"); 
+            controller.preguntaAcertada(model.getPuntuacio_pregunta());
+            controller.preguntaRespondida();    
         } else {
             view.dispose();
             JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
             controller.preguntaFallida(model.getPuntuacio_pregunta()); 
             controller.preguntaRespondida();
+
+        }
         }
 
     }

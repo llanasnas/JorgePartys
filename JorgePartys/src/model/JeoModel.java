@@ -22,9 +22,9 @@ public class JeoModel {
 
     private String[] str_categorias = {"CIENCIA", "HISTORIA", "ARTE", "DEPORTE", "CINE", "GEOGRAFIA"};
     private String[] preu_preguntes = {"100€", "200€", "300€", "400€", "500€"};
-    public Jugador jugador1;
+    public  Jugador jugador1;
     public LinkedHashSet<Pregunta> all_questions = new LinkedHashSet<>();
-    public Jugador jugador2;
+    public  Jugador jugador2;
     public int turno=1;
     public boolean actionListenerActivated=false;
 

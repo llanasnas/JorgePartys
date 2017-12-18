@@ -1,0 +1,11 @@
+3;¿Quién fue el primero en decir que la Tierra orbita alrededor del Sol?;Copérnito;Galileo;Aristarco de Samos
+2;¿A qué temperatura entra en ebullición el oro?;Nunca;A 2940 grados;A 100 grados
+3;El cañón alemán más famoso de la I Guerra Mundial fue...;Elke;Enola Gay;Gran Bertha
+3;Pericles fue un político...;Troyano;Cartagines;Arteniense
+1;¿Cómo se llama el vaso griego utilizado principalmente para mezclar vinos?;Crátera;Hidria;Lecito
+2;¿A qué público iba dirigido el arte del Renacimiento?;Burguesía;Ricos;A todo el mundo
+1;¿Quién fue la primera mujer en portar la antorcha a la entrada de un Estadio Olímpico?;Enriqueta Basilio;Flor Enquist Anderson;Katie Holmes
+1;¿Cómo se llama el pez azul que ejerce de mascota en los Juegos de Pekín?;Beibei;Bambú;Nihin
+3;¿Cómo se titula la película más famosa de George Méliès?;El regador regado;Abracadabra;Viaje a la Luna
+1;¿Cuál fue la única película a color de Charles Chaplin?;La condesa de Hong Kong;Un rey en Nueva York;Candilejas
+

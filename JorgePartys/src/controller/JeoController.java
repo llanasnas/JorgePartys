@@ -11,11 +11,14 @@ import view.JeoGUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import model.JeoModelExtra;
 import model.Jugador;
 import model.PodiumModel;
 import model.Pregunta;
+import model.PreguntaExtra;
 import view.JeoQuestions;
 import view.PodiumView;
 
@@ -26,12 +29,18 @@ public class JeoController implements ActionListener {
 
     private JeoGUI view;
     public JeoModel model;
+    private boolean haAcertado1;
+    private boolean haAcertado2;
+    public boolean finalRound = false;
+    private boolean cambioRonda = false;
 
     public JeoController(JeoGUI view, JeoModel model) {
         this.view = view;
         this.model = model;
         setUpButtons();
     }
+
+    
 
     public void setUpButtons() {
         view.player1Info.setText(String.valueOf(model.jugador1.getNickname() + ": " + model.jugador1.getPuntuation()));
@@ -87,6 +96,32 @@ public class JeoController implements ActionListener {
         }
 
     }
+    public void finalRound(){
+        /*HashSet<PreguntaExtra> auxQuestion = xmodel.extra_questions;
+        PreguntaExtra auxPregunta;
+        
+        Iterator it = auxQuestion.iterator();
+        while(it.hasNext()){
+            auxPregunta = (PreguntaExtra) it.next();
+            JeoQuestions viewFinal = new JeoQuestions();
+            JeoQuestionsExtraController controller = new JeoQuestionsExtraController(auxPregunta ,viewFinal, this);
+        }*/
+        //if (cambioRonda) {
+        //    model.turno++;
+        //}
+        LinkedHashSet<Pregunta> auxLinkedHashSet = model.all_questions;
+        Pregunta auxPregunta;  
+        
+        Iterator it = auxLinkedHashSet.iterator();
+        auxPregunta = (Pregunta) it.next();
+        JeoQuestions viewFinal = new JeoQuestions();
+        JeoQuestionsController controller = new JeoQuestionsController(auxPregunta ,viewFinal, this);
+        //cambioRonda = true;
+        /*while(it.hasNext()){
+            auxPregunta = (Pregunta) it.next();
+            
+        }*/
+    }
 
     public void preguntaRespondida() {
 
@@ -97,7 +132,33 @@ public class JeoController implements ActionListener {
             doubleRound();
             JOptionPane.showMessageDialog(null, "Habeis llegado a la JeoPardy Double Round");
             setUpButtons();
-        } else if (model.turno == 7) {
+        } else if (model.turno == 7 && (model.jugador1.getPuntuation() == model.jugador2.getPuntuation()) || finalRound == true) {
+            JOptionPane.showMessageDialog(null, "Habeis llegado a la JeoPardy Final Round");
+            finalRound = true;
+            do{
+              finalRound();
+              //model.turno++; 
+            }while(model.turno%2!=0 && haAcertado1 && !haAcertado2 || model.turno%2!=0 && !haAcertado1 && haAcertado2); 
+            
+            
+            if (haAcertado1 && !haAcertado2) {
+                Jugador auxJugador;
+                PodiumView view = new PodiumView();
+                auxJugador = model.jugador1;
+                PodiumModel modelo = new PodiumModel(auxJugador);
+                PodiumController controller = new PodiumController(view, modelo);
+                this.view.dispose();
+            } else if(!haAcertado1 && haAcertado2){
+                Jugador auxJugador;
+                PodiumView view = new PodiumView();
+                auxJugador = model.jugador2;
+                PodiumModel modelo = new PodiumModel(auxJugador);
+                PodiumController controller = new PodiumController(view, modelo);
+                this.view.dispose();
+            }
+            
+        }
+        else if (model.turno == 7) {
             Jugador auxJugador;
             PodiumView view = new PodiumView();
             if (model.jugador1.getPuntuation() > model.jugador2.getPuntuation()) {
@@ -116,6 +177,11 @@ public class JeoController implements ActionListener {
     public void preguntaAcertada(int valor) {
         model.getJugador().preguntaAcertada();
         model.getJugador().sumarPuntuacion(valor);
+        if (finalRound == true && model.turno%2==0) {
+            haAcertado2 = true;
+        }else if (finalRound == true && model.turno%2!=0) {
+            haAcertado1 = true;
+        }
 
     }
 
@@ -134,7 +200,11 @@ public class JeoController implements ActionListener {
     public void preguntaFallida(int valor) {
         model.getJugador().preguntaFallada();
         model.getJugador().restarPuntuacion(valor);
-
+        if (finalRound == true && model.turno%2==0) {
+            haAcertado2 = false;
+        }else if (finalRound == true && model.turno%2!=0) {
+            haAcertado1 = false;
+        }
     }
 
     @Override
