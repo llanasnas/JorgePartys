@@ -102,25 +102,27 @@ public class JeoQuestionsExtraController implements ActionListener {
             
             JOptionPane.showMessageDialog(null, "Correcto");
             //controller.preguntaAcertada(model.getPuntuacio_pregunta());
-            preguntaRespuesta();
+           
             if (model.turno % 2 == 0) {
                 model.acertado2 = true;
-                JOptionPane.showMessageDialog(null, "Jugador1 :");  
+                JOptionPane.showMessageDialog(null, "Jugador 1:");  
             } else {
                 model.acertado1 = true;
-                JOptionPane.showMessageDialog(null, "Jugador1 :"); 
+                JOptionPane.showMessageDialog(null, "Jugador 1:"); 
             }
+             preguntaRespuesta();
         } else {            
             JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(pregunta.getRespuesta_correcta()));
             //controller.preguntaFallida(model.getPuntuacio_pregunta()); 
-            preguntaRespuesta();
+            
             if (model.turno % 2 == 0) {
                 model.acertado2 = false;
-                JOptionPane.showMessageDialog(null, "Jugador2 :"); 
+                JOptionPane.showMessageDialog(null, "Jugador 2:"); 
             } else {
                 model.acertado1 = false;
-                JOptionPane.showMessageDialog(null, "Jugador2 :"); 
+                JOptionPane.showMessageDialog(null, "Jugador 2:"); 
             }
+            preguntaRespuesta();
         }
 
     }
