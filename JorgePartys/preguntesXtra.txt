@@ -1,11 +1,10 @@
-3;¿Quién fue el primero en decir que la Tierra orbita alrededor del Sol?;Copérnito;Galileo;Aristarco de Samos
-2;¿A qué temperatura entra en ebullición el oro?;Nunca;A 2940 grados;A 100 grados
-3;El cañón alemán más famoso de la I Guerra Mundial fue...;Elke;Enola Gay;Gran Bertha
-3;Pericles fue un político...;Troyano;Cartagines;Arteniense
-1;¿Cómo se llama el vaso griego utilizado principalmente para mezclar vinos?;Crátera;Hidria;Lecito
-2;¿A qué público iba dirigido el arte del Renacimiento?;Burguesía;Ricos;A todo el mundo
-1;¿Quién fue la primera mujer en portar la antorcha a la entrada de un Estadio Olímpico?;Enriqueta Basilio;Flor Enquist Anderson;Katie Holmes
-1;¿Cómo se llama el pez azul que ejerce de mascota en los Juegos de Pekín?;Beibei;Bambú;Nihin
-3;¿Cómo se titula la película más famosa de George Méliès?;El regador regado;Abracadabra;Viaje a la Luna
-1;¿Cuál fue la única película a color de Charles Chaplin?;La condesa de Hong Kong;Un rey en Nueva York;Candilejas
-
+3;ï¿½QuiÃ©n fue el primero en decir que la Tierra orbita alrededor del Sol?;Copï¿½rnito;Galileo;Aristarco de Samos
+2;ï¿½A quÃ© temperatura entra en ebulliciï¿½n el oro?;Nunca;A 2940 grados;A 100 grados
+3;El caï¿½ï¿½n alemÃ¡n mÃ¡s famoso de la I Guerra Mundial fue...;Elke;Enola Gay;Gran Bertha
+3;Pericles fue un polÃ­tico...;Troyano;Cartagines;Arteniense
+1;Â¿CÃ³mo se llama el vaso griego utilizado principalmente para mezclar vinos?;Crï¿½tera;Hidria;Lecito
+2;Â¿A quÃ© pÃºblico iba dirigido el arte del Renacimiento?;BurguesÃ­a;Ricos;A todo el mundo
+1;ï¿½Quiï¿½n fue la primera mujer en portar la antorcha a la entrada de un Estadio Olï¿½mpico?;Enriqueta Basilio;Flor Enquist Anderson;Katie Holmes
+1;ï¿½Cï¿½mo se llama el pez azul que ejerce de mascota en los Juegos de Pekï¿½n?;Beibei;Bambï¿½;Nihin
+3;ï¿½Cï¿½mo se titula la pelï¿½cula mï¿½s famosa de George Mï¿½liï¿½s?;El regador regado;Abracadabra;Viaje a la Luna
+1;ï¿½Cuï¿½l fue la ï¿½nica pelï¿½cula a color de Charles Chaplin?;La condesa de Hong Kong;Un rey en Nueva York;Candilejas

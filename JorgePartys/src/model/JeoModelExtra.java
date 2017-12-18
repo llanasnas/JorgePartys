@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -18,8 +19,10 @@ import java.util.HashSet;
  * @author Bertiwi
  */
 public class JeoModelExtra {
-    public HashSet<PreguntaExtra> extra_questions = new HashSet<>();
+    public ArrayList<PreguntaExtra> extra_questions = new ArrayList<>();
     public int turno=1;
+    public boolean acertado1 = true;
+    public boolean acertado2 = true;
 
     public JeoModelExtra() {
         cargarDatos();
@@ -49,8 +52,7 @@ public class JeoModelExtra {
                 }
 
                 PreguntaExtra auxPregunta = new PreguntaExtra(Integer.parseInt(array_dades[0]), array_dades[1], hash_respostes);
-
-                extra_questions.add(auxPregunta);
+                extra_questions.add(auxPregunta);                
             }            
         } catch (IOException e) {
             System.out.println("No se ha podido leer");
