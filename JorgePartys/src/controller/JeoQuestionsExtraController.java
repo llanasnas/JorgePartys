@@ -42,8 +42,23 @@ public class JeoQuestionsExtraController implements ActionListener {
     }
 
     public void preguntaRespuesta() {
-
-        if (model.turno % 2 == 0) {
+        if (model.turno+1 == 10) {
+            if(model.acertado1&&model.acertado2){
+            JOptionPane.showMessageDialog(null, "EMPATE");
+            }else if (model.acertado1 == true && model.acertado2 == false) {
+                Jugador auxJugador;
+                PodiumView view = new PodiumView();
+                auxJugador = controller.model.jugador1;
+                PodiumModel modelo = new PodiumModel(auxJugador);
+                PodiumController controller = new PodiumController(view, modelo);
+            } else if (model.acertado1 == false && model.acertado2 == true) {
+                Jugador auxJugador;
+                PodiumView view = new PodiumView();
+                auxJugador = controller.model.jugador2;
+                PodiumModel modelo = new PodiumModel(auxJugador);
+                PodiumController controller = new PodiumController(view, modelo);
+            }
+        } else if (model.turno % 2 == 0) {
             model.turno++;
             if (model.acertado1 == true && model.acertado2 == true || model.acertado1 == false && model.acertado2 == false) {
                 PreguntaExtra pregunta = getPregunta();
@@ -58,23 +73,25 @@ public class JeoQuestionsExtraController implements ActionListener {
                 auxJugador = controller.model.jugador1;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
-            } else if (model.acertado1 == false && model.acertado2 == true){
+                view.dispose();
+            } else if (model.acertado1 == false && model.acertado2 == true) {
                 Jugador auxJugador;
                 PodiumView view = new PodiumView();
                 auxJugador = controller.model.jugador2;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
+                view.dispose();
             }
 
-        } else {  
-        model.turno++;
-        PreguntaExtra pregunta = getPregunta();
-        HashMap auxMap = pregunta.getRespuestas_posibles();
-        view.pregunta.setText(pregunta.getPregunta_extra());
-        view.opcio1.setText((String) auxMap.get(1));
-        view.opcio2.setText((String) auxMap.get(2));
-        view.opcio3.setText((String) auxMap.get(3));
-            
+        } else {
+            model.turno++;
+            PreguntaExtra pregunta = getPregunta();
+            HashMap auxMap = pregunta.getRespuestas_posibles();
+            view.pregunta.setText(pregunta.getPregunta_extra());
+            view.opcio1.setText((String) auxMap.get(1));
+            view.opcio2.setText((String) auxMap.get(2));
+            view.opcio3.setText((String) auxMap.get(3));
+
         }
 
     }
@@ -99,28 +116,28 @@ public class JeoQuestionsExtraController implements ActionListener {
         controller.enableButtons();
 
         if (buttonSelected.getText().equals(auxMap.get(pregunta.getRespuesta_correcta()))) {
-            
+
             JOptionPane.showMessageDialog(null, "Correcto");
             //controller.preguntaAcertada(model.getPuntuacio_pregunta());
-           
+
             if (model.turno % 2 == 0) {
                 model.acertado2 = true;
-                JOptionPane.showMessageDialog(null, "Jugador 1:");  
+                JOptionPane.showMessageDialog(null, "Jugador 1:");
             } else {
                 model.acertado1 = true;
-                JOptionPane.showMessageDialog(null, "Jugador 1:"); 
+                JOptionPane.showMessageDialog(null, "Jugador 1:");
             }
-             preguntaRespuesta();
-        } else {            
+            preguntaRespuesta();
+        } else {
             JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(pregunta.getRespuesta_correcta()));
             //controller.preguntaFallida(model.getPuntuacio_pregunta()); 
-            
+
             if (model.turno % 2 == 0) {
                 model.acertado2 = false;
-                JOptionPane.showMessageDialog(null, "Jugador 2:"); 
+                JOptionPane.showMessageDialog(null, "Jugador 2:");
             } else {
                 model.acertado1 = false;
-                JOptionPane.showMessageDialog(null, "Jugador 2:"); 
+                JOptionPane.showMessageDialog(null, "Jugador 2:");
             }
             preguntaRespuesta();
         }

@@ -105,17 +105,17 @@ public class JeoController implements ActionListener {
         view.player1Info.setText(String.valueOf(model.jugador1.getNickname() + ": " + model.jugador1.getPuntuation()));
         view.player2Info.setText(String.valueOf(model.jugador2.getNickname() + ": " + model.jugador2.getPuntuation()));
         model.turno++;
-        if (model.turno == 5) {
+        if (model.turno == 20) {
             doubleRound();
             JOptionPane.showMessageDialog(null, "Habeis llegado a la JeoPardy Double Round");
             setUpButtons();
-        } else if (model.turno == 7 && (model.jugador1.getPuntuation() == model.jugador2.getPuntuation()) ) {
+        } else if (model.turno == 30&& (model.jugador1.getPuntuation() == model.jugador2.getPuntuation()) ) {
             JOptionPane.showMessageDialog(null, "Final Round: quien falle pierde!!");           
             finalRound();
             view.dispose();
             JOptionPane.showMessageDialog(null, "Jugador 1:");  
         }
-        else if (model.turno == 7) {
+        else if (model.turno == 30) {
             Jugador auxJugador;
             PodiumView view = new PodiumView();
             if (model.jugador1.getPuntuation() > model.jugador2.getPuntuation()) {
@@ -133,7 +133,7 @@ public class JeoController implements ActionListener {
 
     public void preguntaAcertada(int valor) {
         model.getJugador().preguntaAcertada();
-        model.getJugador().sumarPuntuacion(valor);        
+        model.getJugador().sumarPuntuacion(valor);       
 
     }
 
