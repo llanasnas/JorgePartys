@@ -133,8 +133,7 @@ public class JeoController implements ActionListener {
 
     public void preguntaAcertada(int valor) {
         model.getJugador().preguntaAcertada();
-        model.getJugador().sumarPuntuacion(valor);       
-
+        model.getJugador().sumarPuntuacion(valor);  
     }
 
     public void disableButton(Pregunta p) {
