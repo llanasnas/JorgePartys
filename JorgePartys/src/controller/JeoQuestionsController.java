@@ -51,14 +51,14 @@ public class JeoQuestionsController implements ActionListener {
         controller.enableButtons();
         
         
-            if (buttonSelected.getText().equals(auxMap.get(this.model.getPregunta_correcta()))) {
+            if (buttonSelected.getText().equals(auxMap.get(this.model.getRespuesta_correcta()))) {
             view.dispose();
             JOptionPane.showMessageDialog(null, "Correcto"); 
             controller.preguntaAcertada(model.getPuntuacio_pregunta());
             controller.preguntaRespondida();    
         } else {
             view.dispose();
-            JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getPregunta_correcta()));
+            JOptionPane.showMessageDialog(null, " Incorrecto \n La respuesta correcta era: \n " + auxMap.get(this.model.getRespuesta_correcta()));
             controller.preguntaFallida(model.getPuntuacio_pregunta()); 
             controller.preguntaRespondida();
 

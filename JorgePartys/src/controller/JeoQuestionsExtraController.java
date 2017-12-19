@@ -51,12 +51,14 @@ public class JeoQuestionsExtraController implements ActionListener {
                 auxJugador = controller.model.jugador1;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
+                this.view.dispose();
             } else if (model.acertado1 == false && model.acertado2 == true) {
                 Jugador auxJugador;
                 PodiumView view = new PodiumView();
                 auxJugador = controller.model.jugador2;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
+                this.view.dispose();
             }
         } else if (model.turno % 2 == 0) {
             model.turno++;
@@ -73,14 +75,14 @@ public class JeoQuestionsExtraController implements ActionListener {
                 auxJugador = controller.model.jugador1;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
-                view.dispose();
+                this.view.dispose();
             } else if (model.acertado1 == false && model.acertado2 == true) {
                 Jugador auxJugador;
                 PodiumView view = new PodiumView();
                 auxJugador = controller.model.jugador2;
                 PodiumModel modelo = new PodiumModel(auxJugador);
                 PodiumController controller = new PodiumController(view, modelo);
-                view.dispose();
+                this.view.dispose();
             }
 
         } else {
@@ -125,7 +127,7 @@ public class JeoQuestionsExtraController implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Jugador 1:");
             } else {
                 model.acertado1 = true;
-                JOptionPane.showMessageDialog(null, "Jugador 1:");
+                JOptionPane.showMessageDialog(null, "Jugador 2:");
             }
             preguntaRespuesta();
         } else {
@@ -134,7 +136,7 @@ public class JeoQuestionsExtraController implements ActionListener {
 
             if (model.turno % 2 == 0) {
                 model.acertado2 = false;
-                JOptionPane.showMessageDialog(null, "Jugador 2:");
+                JOptionPane.showMessageDialog(null, "Jugador 1:");
             } else {
                 model.acertado1 = false;
                 JOptionPane.showMessageDialog(null, "Jugador 2:");
